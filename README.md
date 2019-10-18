@@ -84,4 +84,30 @@ Impute all missing values in X.
 ----------------------------------------------------------------------------------
 R CODE
 --------------------------------------------------------------------------------
+#MISSING DATA 
 
+#Importing Dataset
+
+dataset = read.csv('editeddata.csv')
+
+#Taking Care of missing Data form the Dataset 
+
+#We are using Mean to fill the empty postions in the datasets here
+
+dataset$Age = ifelse(is.na(dataset$Age),
+
+                     ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
+                     
+                     dataset$Age)
+                     
+
+dataset$Salary = ifelse(is.na(dataset$Salary),
+
+                     ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
+                     
+                     dataset$Salary)
+                     
+----------------------------------------------------------------------------------------------
+DESCRIPTION
+--------------------------------------------------------------------------------------------
+$Age -> It represents the age Column basically here we have to write the column name in which column we have to perform the operation
