@@ -6,8 +6,9 @@ dataset = read.csv('editeddata.csv')
 # Taking Care of missing Data form the Dataset 
 # We are using Mean to fill the empty postions in the datasets here
 
-# SOLVING FROM MEAN FORMULA'S
+
 ------------------------------------------------------------------------------------
+# SOLVING FROM MEAN FORMULA'S
 dataset$Age = ifelse(is.na(dataset$Age),
                      ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
                      dataset$Age)
