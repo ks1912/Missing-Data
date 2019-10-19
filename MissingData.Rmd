@@ -1,10 +1,13 @@
-# DATA PROCESSING 
+# SOLVING MISSING DATA FROM  
 
 # Importing Dataset
 dataset = read.csv('editeddata.csv')
 
 # Taking Care of missing Data form the Dataset 
 # We are using Mean to fill the empty postions in the datasets here
+
+# SOLVING FROM MEAN FORMULA'S
+------------------------------------------------------------------------------------
 dataset$Age = ifelse(is.na(dataset$Age),
                      ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)),
                      dataset$Age)
@@ -13,3 +16,14 @@ dataset$Age = ifelse(is.na(dataset$Age),
 dataset$Salary = ifelse(is.na(dataset$Salary),
                      ave(dataset$Salary, FUN = function(x) mean(x, na.rm = TRUE)),
                      dataset$Salary)
+-------------------------------------------------------------------------------------
+# SOLVING USING MEDIAN FORMULA'S
+
+data$Age = ifelse(is.na(data$Age),
+                     ave(data$Age, FUN = function(x) median(x, na.rm = TRUE)),
+                     data$Age)
+                     
+data$Salary = ifelse(is.na(data$Salary),
+                        ave(data$Salary, FUN = function(x) median(x,na.rm = TRUE)),
+                        data$Salary)
+-------------------------------------------------------------------------------------
